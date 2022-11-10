@@ -1,13 +1,12 @@
-# Sample Hardhat Project
+# Web3 Example
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+steps
 
-Try running some of the following tasks:
+- npm i
+- npm run dev
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+new terminal window
+- npx hardhat node
+
+new terminal window
+- npx hardhat run --network localhost scripts/deploy.js
