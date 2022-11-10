@@ -27,6 +27,11 @@ function formReducer(state, action) {
   }
 }
 
+async function fetchJson(link){
+    const response = await fetch(link);
+    return response.json()
+}
+
 export const Upload = () => {
   const {
     state: { address },
@@ -60,13 +65,9 @@ export const Upload = () => {
 
     const allFileLinks = ipfsPaths.map((path) => `https://${path}.ipfs.w3s.link`)
 
-    const json = await Promise.all(allFileLinks.map(async (link) => {
-        const response = await fetch(link);
-        return response.json()
-    }))
+    const json = await Promise.all(allFileLinks.map((link) => fetchJson(link)))
 
     setAllFiles(json)
-    
   };
 
   const handleSubmitForm = async () => {
