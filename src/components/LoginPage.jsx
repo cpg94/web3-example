@@ -23,7 +23,7 @@ export const LoginPage = () => {
 
             <Group position="center">
                 <Button onClick={handleLoginViaMetaMask}>
-                    <img style={{ height: "25px", marginRight: "5px" }} src={MetaMask} alt="Your SVG" />
+                    <img style={{ height: "25px", marginRight: "5px" }} src={MetaMask} alt="Metamask" />
                     Connect Via MetaMask
                 </Button>
             </Group>
