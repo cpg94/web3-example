@@ -16,7 +16,7 @@ import { useAuth } from "../context/Auth";
 import Addresses from "../artifacts/addresses.json";
 import Skill from "../artifacts/contracts/Skill.sol/Skill.json";
 
-function formReducer(state, action) {
+const formReducer = (state, action) => {
   switch (action.type) {
     case "setField": {
       return { ...state, [action.field]: action.value };
@@ -27,7 +27,7 @@ function formReducer(state, action) {
   }
 }
 
-async function fetchJson(link){
+const fetchJson = async (link) => {
     const response = await fetch(link);
     return response.json()
 }
@@ -103,7 +103,7 @@ export const Upload = () => {
 
     await contract.mint(cid);
 
-    contract.on('Minted', function() {
+    contract.on('Minted', () => {
         showNotification({
             title: `Done!`,
         })
